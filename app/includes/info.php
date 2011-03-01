@@ -56,7 +56,7 @@ function get_rolling_page_dates($query) {
 }
 
 function output_javascript_url($file) {
-	echo get_bloginfo('template_url') .'/'. $file;
+	echo get_template_directory_uri() .'/'. $file;
 }
 
 
