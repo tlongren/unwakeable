@@ -13,14 +13,14 @@ defined( 'K2_CURRENT' ) or die ( 'Error: This file can not be loaded directly.' 
 
 class K2_Widget_About extends WP_Widget {
 	function K2_Widget_About() {
-		$widget_ops = array( 'classname' => 'k2-widget-about', 'description' => __('Message about the current area and optional front-page message', 'unwakeable_domain') );
-		$this->WP_Widget('k2-about', __('K2 About', 'unwakeable_domain'), $widget_ops);
+		$widget_ops = array( 'classname' => 'k2-widget-about', 'description' => __('Message about the current area and optional front-page message', 'unwakeable') );
+		$this->WP_Widget('k2-about', __('K2 About', 'unwakeable'), $widget_ops);
 	}
 
 	function widget($args, $instance) {
 		extract($args);
 
-		$title = empty($instance['title']) ? __('About', 'unwakeable_domain') : apply_filters('widget_title', $instance['title']);
+		$title = empty($instance['title']) ? __('About', 'unwakeable') : apply_filters('widget_title', $instance['title']);
 		$message = stripslashes( $instance['message'] );
 
 		if ( is_home() or is_front_page() or is_page() ) {
@@ -37,47 +37,47 @@ class K2_Widget_About extends WP_Widget {
 				echo $before_title . $title . $after_title; ?>
 
 		<?php if ( is_category() ): // Category Archive ?>
-			<p><?php printf( __('The %1$s archives for the %2$s category.', 'unwakeable_domain'),
+			<p><?php printf( __('The %1$s archives for the %2$s category.', 'unwakeable'),
 						'<a href="' . get_option('siteurl') . '">' . get_bloginfo('name') . '</a>',
 						single_cat_title('', false)
 					); ?></p>
 
 		<?php elseif ( is_day() ): // Day Archive ?>
-			<p><?php printf( __('The %1$s archives for %2$s.', 'unwakeable_domain'),
+			<p><?php printf( __('The %1$s archives for %2$s.', 'unwakeable'),
 						'<a href="' . get_option('siteurl') . '">' . get_bloginfo('name') . '</a>',
-						get_the_time( __('l, F jS, Y', 'unwakeable_domain') )
+						get_the_time( __('l, F jS, Y', 'unwakeable') )
 					); ?></p>
 
 		<?php elseif ( is_month() ): // Monthly Archive ?>
-			<p><?php printf( __('The %1$s archives for %2$s.', 'unwakeable_domain'),
+			<p><?php printf( __('The %1$s archives for %2$s.', 'unwakeable'),
 						'<a href="' . get_option('siteurl') . '">' . get_bloginfo('name') . '</a>',
-						get_the_time( __('F, Y', 'unwakeable_domain') )
+						get_the_time( __('F, Y', 'unwakeable') )
 					); ?></p>
 
 		<?php elseif ( is_year() ): // Yearly Archive ?>
-			<p><?php printf( __('The %1$s archives for %2$s.', 'unwakeable_domain'),
+			<p><?php printf( __('The %1$s archives for %2$s.', 'unwakeable'),
 						'<a href="' . get_option('siteurl') . '">' . get_bloginfo('name') . '</a>',
 						get_the_time('Y')
 					); ?></p>
 
 		<?php elseif ( is_search() ): // Search ?>
-			<p><?php printf( __('You searched the %1$s archives for <strong>%2$s</strong>.', 'unwakeable_domain'),
+			<p><?php printf( __('You searched the %1$s archives for <strong>%2$s</strong>.', 'unwakeable'),
 						'<a href="' . get_option('siteurl') . '">' . get_bloginfo('name') . '</a>',
 						esc_attr( get_search_query() )
 					); ?></p>
 
 		<?php elseif ( is_author() ): // Author Archive ?>
-			<p><?php printf( __('Archive for <strong>%s</strong>.', 'unwakeable_domain'), get_the_author() ); ?></p>
+			<p><?php printf( __('Archive for <strong>%s</strong>.', 'unwakeable'), get_the_author() ); ?></p>
 			<p><?php the_author_meta('description'); ?></p>
 
 		<?php elseif ( is_tag() ): // Tag Archive ?>
-			<p><?php printf( __('The %1$s archives for the <strong>%2$s</strong> tag.','unwakeable_domain'),
+			<p><?php printf( __('The %1$s archives for the <strong>%2$s</strong> tag.','unwakeable'),
 						'<a href="' . get_option('siteurl') . '">' . get_bloginfo('name') . '</a>',
 						get_query_var('tag')
 					); ?></p>
 
 		<?php elseif ( is_paged() ): // Paged Archive ?>
-			<p><?php printf( __('The %s weblog archives.','unwakeable_domain'),
+			<p><?php printf( __('The %s weblog archives.','unwakeable'),
 						'<a href="' . get_option('siteurl') . '">' . get_bloginfo('name') . '</a>'
 					); ?></p>
 
@@ -89,19 +89,19 @@ class K2_Widget_About extends WP_Widget {
 
 	function form($instance) {
 		//Defaults
-		$instance = wp_parse_args( (array) $instance, array( 'title' => __('About', 'unwakeable_domain'), 'message' => '' ) );
+		$instance = wp_parse_args( (array) $instance, array( 'title' => __('About', 'unwakeable'), 'message' => '' ) );
 		$title = esc_attr( $instance['title'] );
 		$message = format_to_edit( $instance['message'] );
 		?>
 			<p>
-				<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'unwakeable_domain'); ?></label>
+				<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'unwakeable'); ?></label>
 				<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $title; ?>" />
 			</p>
 
 			<p>
-				<label for="<?php echo $this->get_field_id('message'); ?>"><?php _e('About Text:', 'unwakeable_domain'); ?></label>
+				<label for="<?php echo $this->get_field_id('message'); ?>"><?php _e('About Text:', 'unwakeable'); ?></label>
 				<textarea id="<?php echo $this->get_field_id('message'); ?>" name="<?php echo $this->get_field_name('message'); ?>" rows="6" cols="30" class="widefat"><?php echo $message; ?></textarea>
-				<small><?php _e('Enter a blurb about yourself here, and it will show up on the front page. Deleting the content disables the about blurb.','unwakeable_domain'); ?></small>
+				<small><?php _e('Enter a blurb about yourself here, and it will show up on the front page. Deleting the content disables the about blurb.','unwakeable'); ?></small>
 			</p>
 		<?php 
 	}
@@ -121,8 +121,8 @@ class K2_Widget_About extends WP_Widget {
 
 class K2_Widget_Asides extends WP_Widget {
 	function K2_Widget_Asides() {
-		$widget_ops = array( 'classname' => 'k2-widget-asides', 'description' => __('Asides on your sidebar', 'unwakeable_domain') );
-		$this->WP_Widget('k2-asides', __('K2 Asides', 'unwakeable_domain'), $widget_ops);
+		$widget_ops = array( 'classname' => 'k2-widget-asides', 'description' => __('Asides on your sidebar', 'unwakeable') );
+		$this->WP_Widget('k2-asides', __('K2 Asides', 'unwakeable'), $widget_ops);
 	}
 
 	function widget($args, $instance) {
@@ -144,8 +144,8 @@ class K2_Widget_Asides extends WP_Widget {
 				<div>
 				<?php while ( $asides->have_posts() ): $asides->the_post(); ?>
 					<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<span>&raquo;&nbsp;</span><?php the_content( __('(more)', 'unwakeable_domain') ); ?>
-						<?php /* Edit Link */ edit_post_link( __('Edit','unwakeable_domain'), '<span class="entry-edit">', '</span>' ); ?>
+						<span>&raquo;&nbsp;</span><?php the_content( __('(more)', 'unwakeable') ); ?>
+						<?php /* Edit Link */ edit_post_link( __('Edit','unwakeable'), '<span class="entry-edit">', '</span>' ); ?>
 					</div>
 				<?php endwhile; ?>
 				</div>
@@ -163,11 +163,11 @@ class K2_Widget_Asides extends WP_Widget {
 		$number = (int) $instance['number'];
 		?>
 		<p>
-			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'unwakeable_domain'); ?></label>
+			<label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:', 'unwakeable'); ?></label>
 			<input type="text" class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" value="<?php echo $title; ?>" />
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of asides to show:', 'unwakeable_domain'); ?></label>
+			<label for="<?php echo $this->get_field_id('number'); ?>"><?php _e('Number of asides to show:', 'unwakeable'); ?></label>
 			<input type="text" id="<?php echo $this->get_field_id('number'); ?>" name="<?php echo $this->get_field_name('number'); ?>" value="<?php echo $number; ?>" size="2" />
 		</p>
 		<?php

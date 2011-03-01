@@ -162,32 +162,32 @@ class unwakeable_styles {
 
 		$path_options = array(
 				'%k2%' => 'unwakeable',
-				'%child%' => __('Child Theme', 'unwakeable_domain'),
+				'%child%' => __('Child Theme', 'unwakeable'),
 				'%content%' => 'wp-content'
 			);
 ?>
 		<li>
-			<h3><?php _e('Styles', 'unwakeable_domain'); ?></h3>
+			<h3><?php _e('Styles', 'unwakeable'); ?></h3>
 
 			<?php if ( ! is_dir($styles_dir) ): ?>
 				<div class="error">
-				<?php printf( __('The directory: <strong>%s</strong>, needed to store custom styles is missing. For you to be able to use custom styles, you need to add this directory.', 'unwakeable_domain'), $styles_dir ); ?>
+				<?php printf( __('The directory: <strong>%s</strong>, needed to store custom styles is missing. For you to be able to use custom styles, you need to add this directory.', 'unwakeable'), $styles_dir ); ?>
 				</div>
 			<?php endif; ?>
 
 			<p class="description">
-				<?php _e('No need to edit core files, K2 is highly customizable.', 'unwakeable_domain'); ?>
-				<a href="http://code.google.com/p/kaytwo/wiki/K2CSSandCustomCSS"><?php _e('Read&nbsp;more.', 'unwakeable_domain'); ?></a>
+				<?php _e('No need to edit core files, K2 is highly customizable.', 'unwakeable'); ?>
+				<a href="http://code.google.com/p/kaytwo/wiki/K2CSSandCustomCSS"><?php _e('Read&nbsp;more.', 'unwakeable'); ?></a>
 			</p>
 
 			<table class="form-table">
 				<tbody>
 					<tr>
 						<th scope="row">
-							<label for="k2-styles-dir"><?php _e('Styles Directory:', 'unwakeable_domain'); ?></label>
+							<label for="k2-styles-dir"><?php _e('Styles Directory:', 'unwakeable'); ?></label>
 						</th>
 						<td>
-							<label for="k2-styles-root" class="hidden"><?php _e('Styles Root Directory:', 'unwakeable_domain'); ?></label>
+							<label for="k2-styles-root" class="hidden"><?php _e('Styles Root Directory:', 'unwakeable'); ?></label>
 							<select id="k2-styles-root" name="k2[stylesroot]" style="width:auto;text-align:right;">
 								<?php foreach ($path_options as $value => $label): ?>
 									<option value="<?php echo $value; ?>" <?php selected( $value, $styles_path[0] ); ?>><?php echo $label; ?></option>
@@ -205,10 +205,10 @@ class unwakeable_styles {
 						<th class="manage-column column-cb check-column" scope="col">
 							<input type="checkbox" />
 						</th>
-						<th class="manage-column column-title"><?php _e('Style', 'unwakeable_domain'); ?></th>
-						<th class="manage-column column-author"><?php _e('Author', 'unwakeable_domain'); ?></th>
-						<th class="manage-column column-version"><?php _e('Version', 'unwakeable_domain'); ?></th>
-						<th class="manage-column column-tags"><?php _e('Tags', 'unwakeable_domain'); ?></th>
+						<th class="manage-column column-title"><?php _e('Style', 'unwakeable'); ?></th>
+						<th class="manage-column column-author"><?php _e('Author', 'unwakeable'); ?></th>
+						<th class="manage-column column-version"><?php _e('Version', 'unwakeable'); ?></th>
+						<th class="manage-column column-tags"><?php _e('Tags', 'unwakeable'); ?></th>
 					</tr>
 				</thead>
 		
@@ -216,7 +216,7 @@ class unwakeable_styles {
 					<?php if ( empty($style_files) ): ?>
 						<tr>
 							<td colspan="5">
-								<?php printf( __('There are no css files found in: <strong>%s</strong>.', 'unwakeable_domain'), $styles_dir); ?>
+								<?php printf( __('There are no css files found in: <strong>%s</strong>.', 'unwakeable'), $styles_dir); ?>
 							</td>
 						</tr>
 					<?php else: foreach( $style_files as $style ): ?>
@@ -362,7 +362,7 @@ class unwakeable_styles {
 		if ( !empty($data) and ($data['stylename'] != '') and ($data['stylelink'] != '') and ($data['author'] != '') ) {
 			// No custom style info
 			if ( $data['footer'] == '' ) {
-				$data['footer'] = __('Styled with <a href="%stylelink%" title="%style% by %author%">%style%</a>','unwakeable_domain');
+				$data['footer'] = __('Styled with <a href="%stylelink%" title="%style% by %author%">%style%</a>','unwakeable');
 			}
 
 			if ( strpos($data['footer'], '%') !== false ) {

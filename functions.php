@@ -12,7 +12,7 @@ function defaultUnwakeableMenu() {
 	wp_list_pages('sort_column=menu_order&depth=1&title_li=');
 	echo "</ul>";
 }
-define('K2_CURRENT', '1.5.5');
+define('K2_CURRENT', '1.5.6');
 
 // Is this MU or no?
 define('K2_MU', (isset($wpmu_version) or (strpos($wp_version, 'wordpress-mu') !== false)));

@@ -287,7 +287,7 @@ if ( ! function_exists('wp_page_menu') ):
 		// Show Home in the menu
 		if ( isset($args['show_home']) && ! empty($args['show_home']) ) {
 			if ( true === $args['show_home'] || '1' === $args['show_home'] || 1 === $args['show_home'] )
-				$text = __('Home');
+				$text = __('Home','unwakeable');
 			else
 				$text = $args['show_home'];
 			$class = '';

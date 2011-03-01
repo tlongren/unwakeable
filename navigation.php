@@ -17,8 +17,8 @@
 		
 	<div class="navigation">
 	<?php $_SERVER['REQUEST_URI']  = preg_replace("/(.*?).php(.*?)&(.*?)&(.*?)&_=/","$2$3",$_SERVER['REQUEST_URI']); ?>
-		<div class="left"><?php next_posts_link('<span>&laquo;</span> '.__('Older','unwakeable_domain').''); ?></div>
-		<div class="right"><?php previous_posts_link(''.__('Newer','unwakeable_domain').' <span>&raquo;</span>'); ?></div>
+		<div class="left"><?php next_posts_link('<span>&laquo;</span> '.__('Older','unwakeable').''); ?></div>
+		<div class="right"><?php previous_posts_link(''.__('Newer','unwakeable').' <span>&raquo;</span>'); ?></div>
 		<div class="clear"></div>
 	</div>
 

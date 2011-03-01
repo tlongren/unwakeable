@@ -5,26 +5,26 @@
 
 		<div id="rollpages"></div>
 		
-		<a id="rollprevious" title="<?php _e('Older','unwakeable_domain'); ?>" href="#">
-			<span>&laquo;</span> <?php _e('Older','unwakeable_domain'); ?>
+		<a id="rollprevious" title="<?php _e('Older','unwakeable'); ?>" href="#">
+			<span>&laquo;</span> <?php _e('Older','unwakeable'); ?>
 		</a>
-		<div id="rollhome" title="<?php _e('Home','unwakeable_domain'); ?>">
-			<span><?php _e('Home','unwakeable_domain'); ?></span>
+		<div id="rollhome" title="<?php _e('Home','unwakeable'); ?>">
+			<span><?php _e('Home','unwakeable'); ?></span>
 		</div>
-		<div id="rollload" title="<?php _e('Loading','unwakeable_domain'); ?>">
-			<span><?php _e('Loading','unwakeable_domain'); ?></span>
+		<div id="rollload" title="<?php _e('Loading','unwakeable'); ?>">
+			<span><?php _e('Loading','unwakeable'); ?></span>
 		</div>
-		<a id="rollnext" title="<?php _e('Newer','unwakeable_domain'); ?>" href="#">
-			<?php _e('Newer','unwakeable_domain'); ?> <span>&raquo;</span>
+		<a id="rollnext" title="<?php _e('Newer','unwakeable'); ?>" href="#">
+			<?php _e('Newer','unwakeable'); ?> <span>&raquo;</span>
 		</a>
 
 		<div id="texttrimmer">
 			<div id="trimmertrackwrap"><div id="trimmertrack"><div id="trimmerhandle"></div></div></div>
 			
-			<div id="trimmerless"><span><?php _e('Less','unwakeable_domain'); ?></span></div>
-			<div id="trimmermore"><span><?php _e('More','unwakeable_domain'); ?></span></div>
-			<div id="trimmertrim"><span><?php _e('Trim','unwakeable_domain'); ?></span></div>
-			<div id="trimmeruntrim"><span><?php _e('Untrim','unwakeable_domain'); ?></span></div>
+			<div id="trimmerless"><span><?php _e('Less','unwakeable'); ?></span></div>
+			<div id="trimmermore"><span><?php _e('More','unwakeable'); ?></span></div>
+			<div id="trimmertrim"><span><?php _e('Trim','unwakeable'); ?></span></div>
+			<div id="trimmeruntrim"><span><?php _e('Untrim','unwakeable'); ?></span></div>
 		</div>
 	</div> <!-- #rollnavigation -->
 </div> <!-- #rollingarchives -->

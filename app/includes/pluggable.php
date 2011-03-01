@@ -49,7 +49,7 @@ if ( ! function_exists('k2_entry_date') ):
 		$output = '<abbr class="published entry-date" title="' . get_the_time('Y-m-d\TH:i:sO') . '">';
 
 		if ( function_exists('time_since') )
-			$output .= sprintf( __('%s ago','unwakeable_domain'), time_since( abs( strtotime( $post->post_date_gmt . ' GMT' ) ), time() ) );
+			$output .= sprintf( __('%s ago','unwakeable'), time_since( abs( strtotime( $post->post_date_gmt . ' GMT' ) ), time() ) );
 		else
 			$output .= get_the_time( get_option('date_format') );
 
@@ -70,7 +70,7 @@ endif;
  */
 if ( ! function_exists('k2_entry_categories') ):
 	function k2_entry_categories() {
-		return '<span class="entry-categories">' . k2_nice_category(', ', __(' and ','unwakeable_domain')) . '</span>';
+		return '<span class="entry-categories">' . k2_nice_category(', ', __(' and ','unwakeable')) . '</span>';
 	}
 endif;
 
@@ -85,7 +85,7 @@ endif;
 if ( ! function_exists('k2_entry_author') ):
 	function k2_entry_author() {
 		return '<span class="vcard author entry-author"><a href="' . get_author_posts_url( get_the_author_meta('ID') ) .
-					'" class="url fn" title="' . sprintf( __('View all posts by %s', 'unwakeable_domain'), esc_attr( get_the_author() ) ) .
+					'" class="url fn" title="' . sprintf( __('View all posts by %s', 'unwakeable'), esc_attr( get_the_author() ) ) .
 					'">' . get_the_author() . '</a></span>';
 	}
 endif;
@@ -99,7 +99,7 @@ endif;
  */
 if ( ! function_exists('k2_entry_tags') ):
 function k2_entry_tags() {
-	if ( $tags = get_the_tag_list( __('<span>Tags:</span> ','unwakeable_domain'), ', ', '.' ) )
+	if ( $tags = get_the_tag_list( __('<span>Tags:</span> ','unwakeable'), ', ', '.' ) )
 		return '<span class="entry-tags">' . $tags . '</span>';
 
 	return $tags;
@@ -117,7 +117,7 @@ if ( ! function_exists('k2_entry_comments') ):
 	function k2_entry_comments() {
 		ob_start();
 
-		comments_popup_link( __('0 <span>Comments</span>', 'unwakeable_domain'), __('1 <span>Comment</span>', 'unwakeable_domain'), __('% <span>Comments</span>', 'unwakeable_domain'), 'commentslink', __('<span>Closed</span>', 'unwakeable_domain') );
+		comments_popup_link( __('0 <span>Comments</span>', 'unwakeable'), __('1 <span>Comment</span>', 'unwakeable'), __('% <span>Comments</span>', 'unwakeable'), 'commentslink', __('<span>Closed</span>', 'unwakeable') );
 
 		return '<span class="entry-comments">' . ob_get_clean() . '</span>';
 	}

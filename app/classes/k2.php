@@ -16,7 +16,7 @@ class K2 {
 	 */
 	function init() {
 		// Loads localisation from K2's languages directory
-		load_theme_textdomain('unwakeable_domain', TEMPLATEPATH . '/languages');
+		load_theme_textdomain('unwakeable', TEMPLATEPATH . '/languages');
 
 		// Load required classes and includes
 		require_once(TEMPLATEPATH . '/app/includes/wp-compat.php');
@@ -79,7 +79,7 @@ class K2 {
 
 		// Added 1.0-RC8
 		add_option('unwakeable_animations', '1', 'JavaScript Animation effects.');
-		add_option('unwakeable_entrymeta1', __('Published on %date% in %categories%. %comments% %tags%', 'unwakeable_domain'), 'Customized metadata format before entry content.');
+		add_option('unwakeable_entrymeta1', __('Published on %date% in %categories%. %comments% %tags%', 'unwakeable'), 'Customized metadata format before entry content.');
 		add_option('unwakeable_entrymeta2', '', 'Customized metadata format after entry content.');
 
 		$defaultjs = "// Lightbox v2.03.3 - Adds new images to lightbox\nif (typeof myLightbox != 'undefined' && myLightbox instanceof Lightbox && myLightbox.updateImageList) {\n\tmyLightbox.updateImageList();\n}\n";
@@ -182,15 +182,15 @@ class K2 {
 	 * Adds K2 Options to Appearance menu, adds actions for head and scripts
 	 */
 	function add_options_menu() {
-		$page = add_theme_page(__('Unwakeable Options','unwakeable_domain'), __('Unwakeable Options','unwakeable_domain'), 'edit_themes', 'k2-options', array('K2', 'admin'));
+		$page = add_theme_page(__('Unwakeable Options','unwakeable'), __('Unwakeable Options','unwakeable'), 'edit_themes', 'k2-options', array('K2', 'admin'));
 
 		add_action( "admin_head-$page", array('K2', 'admin_head') );
 		add_action( "admin_print_scripts-$page", array('K2', 'admin_print_scripts') );
 
 		if ( function_exists('add_contextual_help') ) {
 			add_contextual_help($page,
-				'<a href="http://groups.google.com/group/k2-support/">' .  __('K2 Support Group', 'unwakeable_domain') . '</a><br />' .
-				'<a href="http://code.google.com/p/kaytwo/issues/list">' .  __('K2 Bug Tracker', 'unwakeable_domain') . '</a><br />'
+				'<a href="http://groups.google.com/group/k2-support/">' .  __('K2 Support Group', 'unwakeable') . '</a><br />' .
+				'<a href="http://code.google.com/p/kaytwo/issues/list">' .  __('K2 Bug Tracker', 'unwakeable') . '</a><br />'
 				);
 		}
 	}
@@ -211,7 +211,7 @@ class K2 {
 		?>
 		<script type="text/javascript" charset="utf-8">
 		//<![CDATA[
-			var defaults_prompt = "<?php _e('Do you want to restore K2 to default settings? This will remove all your K2 settings.', 'unwakeable_domain'); ?>";
+			var defaults_prompt = "<?php _e('Do you want to restore K2 to default settings? This will remove all your K2 settings.', 'unwakeable'); ?>";
 		//]]>
 		</script>
 		<link type="text/css" rel="stylesheet" href="<?php get_template_directory_uri(); ?>/css/options.css" />
@@ -487,13 +487,13 @@ class K2 {
 		jQuery(document).ready(function(){
 			<?php /* LiveSearch */ if ( '1' == get_option('unwakeable_livesearch') ): ?>
 			K2.LiveSearch = new LiveSearch(
-				"<?php esc_attr_e('Type and Wait to Search','unwakeable_domain'); ?>"
+				"<?php esc_attr_e('Type and Wait to Search','unwakeable'); ?>"
 			);
 			<?php endif; ?>
 
 			<?php /* Rolling Archives */ if ( '1' == get_option('unwakeable_rollingarchives') ): ?>
 			K2.RollingArchives = new RollingArchives(
-				"<?php esc_attr_e('Page %1$d of %2$d', 'unwakeable_domain'); ?>"
+				"<?php esc_attr_e('Page %1$d of %2$d', 'unwakeable'); ?>"
 			);
 
 			jQuery('body').addClass('rollingarchives');

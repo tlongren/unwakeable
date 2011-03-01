@@ -17,15 +17,15 @@
 
 			if ( is_day() ) {
 				$templates[] = 'blocks/k2-loop-archive-day.php';
-				$page_head = sprintf( __('Daily Archive for %s','unwakeable_domain'), get_the_time( __('F jS, Y','unwakeable_domain') ) );
+				$page_head = sprintf( __('Daily Archive for %s','unwakeable'), get_the_time( __('F jS, Y','unwakeable') ) );
 
 			} elseif ( is_month() ) {
 				$templates[] = 'blocks/k2-loop-archive-month.php';
-				$page_head = sprintf( __('Monthly Archive for %s','unwakeable_domain'), get_the_time( __('F, Y','unwakeable_domain') ) );
+				$page_head = sprintf( __('Monthly Archive for %s','unwakeable'), get_the_time( __('F, Y','unwakeable') ) );
 
 			} elseif ( is_year() ) {
 				$templates[] = 'blocks/k2-loop-archive-year.php';
-				$page_head = sprintf( __('Yearly Archive for %s','unwakeable_domain'), get_the_time( __('Y','unwakeable_domain') ) );
+				$page_head = sprintf( __('Yearly Archive for %s','unwakeable'), get_the_time( __('Y','unwakeable') ) );
 			}
 
 			$templates[] = 'blocks/k2-loop-archive-date.php';
@@ -34,22 +34,22 @@
 		} elseif ( is_category() ) {
 			$templates[] = 'blocks/k2-loop-category-' . absint( get_query_var('cat') ) . '.php';
 			$templates[] = 'blocks/k2-loop-category.php';
-			$page_head = sprintf( __('Archive for the \'%s\' Category','unwakeable_domain'), single_cat_title('', false) );
+			$page_head = sprintf( __('Archive for the \'%s\' Category','unwakeable'), single_cat_title('', false) );
 			
 		} elseif ( is_tag() ) {
 			$templates[] = 'blocks/k2-loop-tag-' . get_query_var('tag') . '.php';
 			$templates[] = 'blocks/k2-loop-tag.php';
-			$page_head = sprintf( __('Tag Archive for \'%s\'','unwakeable_domain'), single_tag_title('', false) );
+			$page_head = sprintf( __('Tag Archive for \'%s\'','unwakeable'), single_tag_title('', false) );
 			
 		} elseif ( is_author() ) {
 			$templates[] = 'blocks/k2-loop-author.php';
-			$page_head = sprintf( __('Author Archive for %s','unwakeable_domain'), get_the_author_meta('display_name') );
+			$page_head = sprintf( __('Author Archive for %s','unwakeable'), get_the_author_meta('display_name') );
 		}
 		
 		$templates[] = 'blocks/k2-loop-archive.php';
 	} elseif ( is_search() ) {
 		$templates[] = 'blocks/k2-loop-search.php';
-		$page_head = sprintf( __('Search Results for \'%s\'','unwakeable_domain'), esc_attr( get_search_query() ) );
+		$page_head = sprintf( __('Search Results for \'%s\'','unwakeable'), esc_attr( get_search_query() ) );
 	}
 
 	$templates[] = 'blocks/k2-loop.php';
@@ -62,7 +62,7 @@
 			<h1><?php echo $page_head; ?></h1>
 
 			<?php if ( is_paged() ): ?>
-				<h2 class="archivepages"><?php printf( __('Page %1$s of %2$s', 'unwakeable_domain'), intval( get_query_var('paged')), $wp_query->max_num_pages); ?></h2>
+				<h2 class="archivepages"><?php printf( __('Page %1$s of %2$s', 'unwakeable'), intval( get_query_var('paged')), $wp_query->max_num_pages); ?></h2>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>

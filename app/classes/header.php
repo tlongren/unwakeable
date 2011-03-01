@@ -75,18 +75,18 @@ class K2Header {
 
 ?>
 		<li>
-			<h3><?php _e('Header', 'unwakeable_domain'); ?></h3>
+			<h3><?php _e('Header', 'unwakeable'); ?></h3>
 
 			<p class="description">
 			<?php
 			/*
-				printf( __('The current header size is <strong>%1$s px by %2$s px</strong>.', 'unwakeable_domain'),
+				printf( __('The current header size is <strong>%1$s px by %2$s px</strong>.', 'unwakeable'),
 					HEADER_IMAGE_WIDTH, HEADER_IMAGE_HEIGHT
 				);
 
 				if ( extension_loaded('gd') and function_exists('gd_info') ) {
-					printf( __(' Use %s to customize the header.', 'unwakeable_domain'),
-						'<a href="themes.php?page=custom-header">' . __('Custom Image Header', 'unwakeable_domain') . '</a>'
+					printf( __(' Use %s to customize the header.', 'unwakeable'),
+						'<a href="themes.php?page=custom-header">' . __('Custom Image Header', 'unwakeable') . '</a>'
 					);
 				}
 				*/
@@ -97,7 +97,7 @@ class K2Header {
 				<tbody>
 					<tr>
 						<th scope="row">
-							<label for="k2-blog-tab"><?php _e('Rename the \'Blog\' tab:', 'unwakeable_domain'); ?></label>
+							<label for="k2-blog-tab"><?php _e('Rename the \'Blog\' tab:', 'unwakeable'); ?></label>
 						</th>
 						<td>
 							<input id="k2-blog-tab" name="k2[blogornoblog]" type="text" value="<?php form_option('unwakeable_blogornoblog'); ?>" />

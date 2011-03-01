@@ -46,7 +46,7 @@
 						<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php k2_permalink_title(); ?>"><?php the_title(); ?></a>
 					</h1>
 
-					<?php /* Edit Link */ edit_post_link( __('Edit','unwakeable_domain'), '<span class="entry-edit">', '</span>' ); ?>
+					<?php /* Edit Link */ edit_post_link( __('Edit','unwakeable'), '<span class="entry-edit">', '</span>' ); ?>
 
 					<?php /* K2 Hook */ do_action('template_entry_head'); ?>
 				</div> <!-- .entry-head -->
@@ -60,28 +60,28 @@
 						<?php endif; ?>
 					</div>
 
-					<?php if ( !empty($post->post_content) ) the_content(sprintf(__('Continue reading \'%s\'', 'unwakeable_domain'), the_title('', '', false))); ?>
+					<?php if ( !empty($post->post_content) ) the_content(sprintf(__('Continue reading \'%s\'', 'unwakeable'), the_title('', '', false))); ?>
 				</div> <!-- .entry-content -->
 
 				<div class="entry-foot">
-					<h5><?php _e('Photo Information', 'unwakeable_domain'); ?></h5>
+					<h5><?php _e('Photo Information', 'unwakeable'); ?></h5>
 					<ul class="image-meta">
 						<li class="dimensions">
-							<span><?php _e('Dimensions:','unwakeable_domain'); ?></span>
+							<span><?php _e('Dimensions:','unwakeable'); ?></span>
 							<?php
 								list($width, $height) = getimagesize( get_attached_file($post->ID) );
-								printf( _x('%1$s &times; %2$s pixels', 'k2_image', 'unwakeable_domain'), $width, $height );
+								printf( _x('%1$s &times; %2$s pixels', 'k2_image', 'unwakeable'), $width, $height );
 							?>
 						</li>
 						<li class="file-size">
-							<span><?php _e('File Size:','unwakeable_domain'); ?></span>
+							<span><?php _e('File Size:','unwakeable'); ?></span>
 							<?php echo size_format( filesize( get_attached_file($post->ID) ) ); ?>
 						</li>
 						<li class="uploaded">
-							<span><?php _e('Uploaded on:','unwakeable_domain'); ?></span>
+							<span><?php _e('Uploaded on:','unwakeable'); ?></span>
 							<?php
 								if ( function_exists('time_since') ):
-									printf( __('%s ago','unwakeable_domain'),
+									printf( __('%s ago','unwakeable'),
 										'<abbr class="published" title="' . get_the_time('Y-m-d\TH:i:sO') . '">' . time_since(abs(strtotime($post->post_date_gmt . " GMT")), time()) . '</abbr>');
 								else:
 							?><abbr class="published" title="<?php the_time('Y-m-d\TH:i:sO'); ?>"><?php the_time( get_option('date_format') ); ?></abbr><?php endif; ?>
@@ -118,11 +118,11 @@
 			<div class="hentry four04">
 
 				<div class="entry-head">
-					<h3 class="center"><?php _e('Not Found','unwakeable_domain'); ?></h3>
+					<h3 class="center"><?php _e('Not Found','unwakeable'); ?></h3>
 				</div>
 
 				<div class="entry-content">
-					<p><?php _e('Oh no! You\'re looking for something which just isn\'t here! Fear not however, errors are to be expected, and luckily there are tools on the sidebar for you to use in your search for what you need.','unwakeable_domain'); ?></p>
+					<p><?php _e('Oh no! You\'re looking for something which just isn\'t here! Fear not however, errors are to be expected, and luckily there are tools on the sidebar for you to use in your search for what you need.','unwakeable'); ?></p>
 				</div>
 
 			</div> <!-- .hentry .four04 -->
