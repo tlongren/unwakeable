@@ -401,36 +401,36 @@ class K2 {
 	function register_scripts() {
 		// Register jQuery
 		wp_register_script('jquery-dimensions',
-			get_bloginfo('template_directory') . '/js/jquery.dimensions.js',
+			get_template_directory_uri() . '/js/jquery.dimensions.js',
 			array('jquery'), '1.2');
 
 		wp_register_script('jquery-easing',
-			get_bloginfo('template_directory') . '/js/jquery.easing.js',
+			get_template_directory_uri() . '/js/jquery.easing.js',
 			array('jquery'), '1.1.2');
 
 		// Register our scripts with WordPress
 		wp_register_script('k2functions',
-			get_bloginfo('template_directory') . '/js/k2.functions.js',
+			get_template_directory_uri() . '/js/k2.functions.js',
 			array('jquery'), K2_CURRENT);
 
 		wp_register_script('k2options',
-			get_bloginfo('template_directory') . '/js/k2.options.js',
+			get_template_directory_uri() . '/js/k2.options.js',
 			array('jquery', 'jquery-ui-sortable'), K2_CURRENT);
 
 		wp_register_script('unwakeable_rollingarchives',
-			get_bloginfo('template_directory') . '/js/k2.rollingarchives.js',
+			get_template_directory_uri() . '/js/k2.rollingarchives.js',
 			array('jquery', 'k2slider', 'k2trimmer'), K2_CURRENT, true);
 
 		wp_register_script('unwakeable_livesearch',
-			get_bloginfo('template_directory') . '/js/k2.livesearch.js',
+			get_template_directory_uri() . '/js/k2.livesearch.js',
 			array('jquery'), K2_CURRENT, true);
 
 		wp_register_script('k2slider',
-			get_bloginfo('template_directory') . '/js/k2.slider.js',
+			get_template_directory_uri() . '/js/k2.slider.js',
 			array('jquery'), K2_CURRENT, true);
 
 		wp_register_script('k2trimmer',
-			get_bloginfo('template_directory') . '/js/k2.trimmer.js',
+			get_template_directory_uri() . '/js/k2.trimmer.js',
 			array('jquery', 'k2slider'), K2_CURRENT, true);
 	}
 
