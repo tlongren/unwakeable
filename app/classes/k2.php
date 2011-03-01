@@ -481,7 +481,7 @@ class K2 {
 		jQuery(window).resize(dynamicColumns);
 	<?php endif; ?>
 
-		K2.AjaxURL = "<?php bloginfo('url'); ?>/";
+		K2.AjaxURL = "<?php echo home_url(); ?>/";
 		K2.Animations = <?php echo (int) get_option('unwakeable_animations') ?>;
 
 		jQuery(document).ready(function(){
