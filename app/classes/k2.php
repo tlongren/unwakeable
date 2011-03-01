@@ -318,7 +318,7 @@ class K2 {
 			return get_page_link($page_id);
 		}
 		
-		return get_bloginfo('url') . '/';
+		return home_url() . '/';
 	}
 
 
