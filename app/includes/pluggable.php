@@ -26,7 +26,7 @@ if ( ! function_exists('k2_entry_meta') ):
 		$num = (int) $num;
 		if ( $num < 1 ) $num = 1;
 
-		$entrymeta = preg_replace( '/%(.+?)%/', '[entry_$1]', get_option('k2entrymeta' . $num) );
+		$entrymeta = preg_replace( '/%(.+?)%/', '[entry_$1]', get_option('unwakeable_entrymeta' . $num) );
 
 		echo do_shortcode($entrymeta);
 	}
